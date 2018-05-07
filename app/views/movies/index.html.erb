@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>List of movies</h1>
+</div>
+
+<% @movies.each do |movie| %>
+	<div class="container">
+		<div class="col-md-4">
+			<div><%= image_tag "http://image.tmdb.org/t/p/w92/#{movie.poster_path}" %></div>
+		</div>
+		<div class="col-md-4">
+			<p><%= movie.title %></p>
+			<p><%= movie.vote_average %></p>
+		</div>
+		<div class="col-md-4">
+			<i class="fa fa-angle-double-up rating <%= movie.id %>_rating" style="font-size:36px" data-id="<%= movie.id %>" data-value="up"></i>
+			<i class="fa fa-angle-double-down rating <%= movie.id %>_rating" style="font-size:36px" data-id="<%= movie.id %>" data-value="down"></i>
+			<i class="fa fa-angle-double-left rating <%= movie.id %>_rating" style="font-size:36px" data-id="<%= movie.id %>" data-value="left"></i>
+			<i class="fa fa-angle-double-right rating <%= movie.id %>_rating" style="font-size:36px" data-id="<%= movie.id %>" data-value="right"></i>
+		</div>
+	</div>
+<% end %>
